@@ -1,0 +1,102 @@
+[
+    {
+        "name": "search_products",
+        "description": "Search for products in the catalog by keywords, category, or features",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Search keywords (e.g., 'wireless headphones', 'gaming laptop')"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Product category filter (e.g., 'electronics', 'clothing', 'books', 'all')"
+                },
+                "max_results": {
+                    "type": "integer",
+                    "description": "Maximum number of results to return"
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    {
+        "name": "get_product_details",
+        "description": "Get detailed information about a specific product including specifications, pricing, and availability",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "product_id": {
+                    "type": "string",
+                    "description": "Unique product identifier (e.g., 'PROD001')"
+                }
+            },
+            "required": [
+                "product_id"
+            ]
+        }
+    },
+    {
+        "name": "get_recommendations",
+        "description": "Get personalized product recommendations based on customer preferences and budget",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "customer_preference": {
+                    "type": "string",
+                    "description": "Customer interests or needs (e.g., 'gaming', 'fitness', 'productivity')"
+                },
+                "budget_range": {
+                    "type": "string",
+                    "description": "Budget preference ('under_50', '50_200', '200_500', 'over_500', 'any')"
+                }
+            },
+            "required": [
+                "customer_preference"
+            ]
+        }
+    },
+    {
+        "name": "check_order_status",
+        "description": "Check the status and tracking information for a customer order",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "order_id": {
+                    "type": "string",
+                    "description": "Order number or ID (e.g., 'ORD12345')"
+                },
+                "customer_email": {
+                    "type": "string",
+                    "description": "Customer email for verification (optional)"
+                }
+            },
+            "required": [
+                "order_id"
+            ]
+        }
+    },
+    {
+        "name": "get_order_history",
+        "description": "Get order history for a customer",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "customer_email": {
+                    "type": "string",
+                    "description": "Customer email address"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "Maximum number of orders to return (default: 10)"
+                }
+            },
+            "required": [
+                "customer_email"
+            ]
+        }
+    }
+]
