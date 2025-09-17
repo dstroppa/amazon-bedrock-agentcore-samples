@@ -95,7 +95,7 @@ class ChatManager:
             st.session_state["session_id"] = str(uuid.uuid4())
 
         if "agent_arn" not in st.session_state:
-            agent_arn = get_ssm_parameter("/app/customersupport/agentcore/runtime_arn")
+            agent_arn = get_ssm_parameter("/app/retail/agentcore/runtime_arn")
             st.session_state["agent_arn"] = agent_arn
 
         if "region" not in st.session_state:
@@ -249,7 +249,7 @@ class ChatManager:
             start_time = time.time()
 
             create_safe_markdown_text(
-                '<span class="thinking-bubble">🤖 💭 Customer Support Assistant is thinking...</span>',
+                '<span class="thinking-bubble">🤖 💭 Shopping Assistant is thinking...</span>',
                 message_placeholder,
             )
 
@@ -325,7 +325,7 @@ class ChatManager:
                 start_time = time.time()
 
                 create_safe_markdown_text(
-                    '<span class="thinking-bubble">🤖 💭 Customer Support Assistant is thinking...</span>',
+                    '<span class="thinking-bubble">🤖 💭 Shopping Assistant is thinking...</span>',
                     message_placeholder,
                 )
 
